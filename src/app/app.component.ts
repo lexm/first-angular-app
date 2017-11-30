@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -6,18 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user = {
-    username: '',
-    password: ''
-  };
+  user = new User();
   title = 'Forms';
   users = [];
   onSubmit() {
     this.users.push(this.user);
-    this.user = {
-      username: '',
-      password: ''
-    };
+    this.user = new User();
     console.log(this.users);
   }
 }

@@ -3,13 +3,16 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <form (submit)="onSubmit()">
-    <input type="text" name="username" [(ngModel)]="user.username" #username="ngModel" required />
-    <input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required />   
-    <p>{{ username.errors | json }} {{ username.valid | json }}</p>
-    <p>{{ password.errors | json }} {{ password.valid | json }}</p>
-    <input type="submit">
-  </form>
+<form (submit)="onSubmit()">
+  <input type="text" name="email" required minlength="4" maxlength="24" [(ngModel)]="user.email" #email='ngModel' />
+  <input type="text" name="first_name" required minlength="4" maxlength="24" [(ngModel)]="user.first_name" #first_name='ngModel'
+  />
+  <input type="text" name="last_name" required minlength="4" maxlength="24" [(ngModel)]="user.last_name" #last_name='ngModel'
+  />
+  <input type="text" name="password" required minlength="10" maxlength="24" pattern="^([a-zA-Z0-9@*#]{8,15})$" [(ngModel)]="user.password"
+    #password='ngModel' />
+  <input type="submit">
+</form>
 </div>
 
 
