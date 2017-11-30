@@ -6,12 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user = { email: '' }
+  user = {
+    username: '',
+    password: ''
+  };
   title = 'Forms';
   users = [];
   onSubmit() {
     this.users.push(this.user);
-    this.user = { email: '' };
+    this.user = {
+      username: '',
+      password: ''
+    };
     console.log(this.users);
   }
 }
